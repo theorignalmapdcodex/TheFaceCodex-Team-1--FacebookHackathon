@@ -41,6 +41,12 @@ export class RegisterComponent implements OnInit {
       if (that.userData === null) {
         that.userLoaded = false;
       } else {
+        if (that.userData.medicalDetails === undefined) {
+          that.userData.medicalDetails = new MedicalDetails();
+        }
+        if (that.userData.emergencyDetails === undefined) {
+          that.userData.emergencyDetails = new EmergencyDetails();
+        }
         that.userLoaded = true;
       }
     }, function (error) {

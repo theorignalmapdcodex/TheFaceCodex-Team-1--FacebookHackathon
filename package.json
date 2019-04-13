@@ -19,8 +19,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build --prod --aot --buildOptimizer --commonChunk --vendorChunk --optimization --progress",
+    "postinstall": "ng build --aot -- prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -44,6 +45,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "core-js": "^2.6.5",
+    "express": "^4.16.4",
     "firebase": "^5.9.4",
     "flag-icon-css": "^3.3.0",
     "font-awesome": "^4.7.0",
@@ -52,6 +54,7 @@
     "ng2-charts": "^1.6.0",
     "ngx-bootstrap": "^3.2.0",
     "ngx-perfect-scrollbar": "^7.2.1",
+    "path": "^0.12.7",
     "rxjs": "^6.4.0",
     "simple-line-icons": "^2.4.1",
     "ts-helpers": "^1.1.2",

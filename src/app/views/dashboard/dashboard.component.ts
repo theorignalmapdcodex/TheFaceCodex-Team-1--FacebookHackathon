@@ -11,7 +11,7 @@ import {UserService} from '../user/user.service';
 export class DashboardComponent implements OnInit {
 
   isCollapsed: boolean = false;
-  userData: User = new User();
+  userData: User;
   userUid: string = '';
 
   collapsed(event: any): void {
@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
   }
 
   constructor(private userService: UserService) {
+    this.userData = new User();
     this.userData.medicalDetails = new MedicalDetails();
     this.userData.emergencyDetails = new EmergencyDetails();
   }
@@ -31,7 +32,13 @@ export class DashboardComponent implements OnInit {
     this.userUid = this.userService.user.uid;
     const that = this ;
     this.userService.getUserData().subscribe(function (response) {
-      const queryUserData = response.payload.val();
+      const queryUserData = <User>response.payload.val();
+      if (queryUserData.medicalDetails === undefined) {
+        queryUserData.medicalDetails = new MedicalDetails();
+      }
+      if (queryUserData.emergencyDetails === undefined) {
+        queryUserData.emergencyDetails = new EmergencyDetails();
+      }
       that.userData = <User>queryUserData;
     });
   }

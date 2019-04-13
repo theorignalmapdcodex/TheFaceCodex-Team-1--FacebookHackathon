@@ -43,6 +43,7 @@ export class UserComponent implements OnInit {
         phone: [null , Validators.compose ( [ Validators.required] )],
       }),
     } );
+
     const that = this;
     this.userService.getUserData().subscribe(function (response) {
       const queryUserData = response.payload.val();

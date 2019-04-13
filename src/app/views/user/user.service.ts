@@ -29,7 +29,6 @@ export class UserService {
 
   postUserData(user: User) {
     user.email = this.user.email;
-    console.log('email is ' + user.email);
     return this.usersRef.update(this.user.uid, user);
   }
 

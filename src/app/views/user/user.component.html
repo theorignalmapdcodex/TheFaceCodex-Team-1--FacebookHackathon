@@ -28,15 +28,15 @@
               <div class="col-md-9 col-form-label">
                 <div class="form-check">
                   <input [formControl]="form.controls['gender']"
-                         class="form-check-input" type="radio" name="radios" id="radio1" value="male">
-                  <label class="form-check-label" for="radio1">
+                         class="form-check-input" type="radio" name="gender" id="gender_male" value="male">
+                  <label class="form-check-label" for="gender_male">
                     Male
                   </label>
                 </div>
                 <div class="form-check">
                   <input [formControl]="form.controls['gender']"
-                         class="form-check-input" type="radio" name="radios" id="radio2" value="female">
-                  <label class="form-check-label" for="radio2">
+                         class="form-check-input" type="radio" name="gender" id="gender_female" value="female">
+                  <label class="form-check-label" for="gender_female">
                     Female
                   </label>
                 </div>
@@ -100,7 +100,7 @@
             <div class="form-group row">
               <label class="col-md-3 col-form-label" for="text-input">Treatments</label>
               <div class="col-md-9">
-                <input [formControl]="form.controls['medicalDetails'].controls['treatments']"
+                <input [formControl]="form.controls['medicalDetails']['controls']['treatments']"
                        type="text" id="text-input" name="text-input" class="form-control"
                        placeholder="Your treatments...">
                 <span class="help-block">Please be specific</span>
@@ -110,30 +110,30 @@
               <label class="col-md-3 col-form-label">Blood type</label>
               <div class="col-md-9 col-form-label">
                 <div class="form-check">
-                  <input [formControl]="form.controls['medicalDetails'].controls['bloodType']"
-                         class="form-check-input" type="radio" name="radios" id="radio5" value="A" checked>
-                  <label class="form-check-label" for="radio5">
+                  <input [formControl]="form.controls['medicalDetails']['controls']['bloodType']"
+                         class="form-check-input" type="radio" name="bloodType" id="blood_type_a" value="A" checked>
+                  <label class="form-check-label" for="blood_type_a">
                     Group A
                   </label>
                 </div>
                 <div class="form-check">
-                  <input [formControl]="form.controls['medicalDetails'].controls['bloodType']"
-                         class="form-check-input" type="radio" name="radios" id="radio6" value="B">
-                  <label class="form-check-label" for="radio6">
+                  <input [formControl]="form.controls['medicalDetails']['controls']['bloodType']"
+                         class="form-check-input" type="radio" name="bloodType" id="blood_type_b" value="B">
+                  <label class="form-check-label" for="blood_type_b">
                     Group B
                   </label>
                 </div>
                 <div class="form-check">
-                  <input [formControl]="form.controls['medicalDetails'].controls['bloodType']"
-                         class="form-check-input" type="radio" name="radios" id="radio7" value="AB">
-                  <label class="form-check-label" for="radio7">
+                  <input [formControl]="form.controls['medicalDetails']['controls']['bloodType']"
+                         class="form-check-input" type="radio" name="bloodType" id="blood_type_ab" value="AB">
+                  <label class="form-check-label" for="blood_type_ab">
                     Group AB
                   </label>
                 </div>
                 <div class="form-check">
-                  <input [formControl]="form.controls['medicalDetails'].controls['bloodType']"
-                         class="form-check-input" type="radio" name="radios" id="radio8" value="O">
-                  <label class="form-check-label" for="radio8">
+                  <input [formControl]="form.controls['medicalDetails']['controls']['bloodType']"
+                         class="form-check-input" type="radio" name="bloodType" id="blood_type_o" value="O">
+                  <label class="form-check-label" for="blood_type_o">
                     Group O
                   </label>
                 </div>
@@ -142,7 +142,7 @@
             <div class="form-group row">
               <label class="col-md-3 col-form-label" for="textarea-input">Health conditions</label>
               <div class="col-md-9">
-                <textarea [formControl]="form.controls['medicalDetails'].controls['healthCondition']"
+                <textarea [formControl]="form.controls['medicalDetails']['controls']['healthCondition']"
                           id="textarea-input" name="textarea-input" rows="9" class="form-control"
                           placeholder="Please outline health conditions you have been diagnosed of ever.."></textarea>
               </div>
@@ -150,7 +150,7 @@
             <div class="form-group row">
               <label class="col-md-3 col-form-label" for="allergies">Allergies</label>
               <div class="col-md-9">
-                <textarea [formControl]="form.controls['medicalDetails'].controls['allergies']"
+                <textarea [formControl]="form.controls['medicalDetails']['controls']['allergies']"
                           id="allergies" name="textarea-input" rows="9" class="form-control"
                           placeholder="Please input all elements you are allergic to..."></textarea>
               </div>
@@ -166,30 +166,30 @@
           <div class="card-body">
             <div class="form-group">
               <label for="emmergency_firstname">Firstname</label>
-              <input [formControl]="form.controls['emergencyDetails'].controls['firstname']"
+              <input [formControl]="form.controls['emergencyDetails']['controls']['firstname']"
                      type="text" class="form-control" id="emmergency_firstname" placeholder="Enter your first name">
             </div>
             <div class="form-group">
               <label for="emmergency_lastname">Lastname</label>
-              <input [formControl]="form.controls['emergencyDetails'].controls['lastname']"
+              <input [formControl]="form.controls['emergencyDetails']['controls']['lastname']"
                      type="text" class="form-control" id="emmergency_lastname" placeholder="Enter your lastname">
             </div>
 
             <div class="form-group">
               <label for="emmergency_address">Address</label>
-              <input [formControl]="form.controls['emergencyDetails'].controls['address']"
+              <input [formControl]="form.controls['emergencyDetails']['controls']['address']"
                      type="text" class="form-control" id="emmergency_address" placeholder="Enter your current address">
             </div>
 
             <div class="form-group">
               <label for="emmergency_email">Email Input</label>
-              <input [formControl]="form.controls['emergencyDetails'].controls['email']"
+              <input [formControl]="form.controls['emergencyDetails']['controls']['email']"
                      type="email" id="emmergency_email" name="email-input" class="form-control"
                      placeholder="Enter Email" autocomplete="email">
             </div>
             <div class="form-group">
               <label for="emmergency_phone">Phone number</label>
-              <input [formControl]="form.controls['emergencyDetails'].controls['phone']"
+              <input [formControl]="form.controls['emergencyDetails']['controls']['phone']"
                      type="text" class="form-control" id="emmergency_phone" placeholder="Enter your phone number">
             </div>
           </div>
