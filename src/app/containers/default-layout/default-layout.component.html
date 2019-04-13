@@ -1,8 +1,8 @@
 <app-header
   [navbarBrandRouterLink]="['/dashboard']"
   [fixed]="true"
-  [navbarBrandFull]="{src: 'assets/img/brand/logo.svg', width: 89, height: 25, alt: 'CoreUI Logo'}"
-  [navbarBrandMinimized]="{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'CoreUI Logo'}"
+  [navbarBrandFull]="{src: 'assets/img/brand/logo_small.png', width: 120, height: 60, alt: 'HealthiCheck Logo'}"
+  [navbarBrandMinimized]="{src: 'assets/img/brand/logo_small.png', width: 30, height: 30, alt: 'HealthiCheck Logo'}"
   [sidebarToggler]="'lg'"
   [asideMenuToggler]="false">
   <ul class="nav navbar-nav ml-auto">
@@ -12,7 +12,7 @@
       </a>
       <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
         <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+        <a class="dropdown-item" href (click)="signOut()"><i class="fa fa-lock"></i> Logout</a>
       </div>
     </li>
   </ul>

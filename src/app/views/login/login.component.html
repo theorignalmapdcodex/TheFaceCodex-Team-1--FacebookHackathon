@@ -1,4 +1,5 @@
 <div class="app-body">
+  <img src="assets/img/background.jpeg" style="width: 100%;position: absolute;">
   <main class="main d-flex align-items-center">
     <div class="container">
       <div class="row">
@@ -7,7 +8,7 @@
             <div class="card p-4">
               <div class="card-body">
                 <form [formGroup]="form" (submit)="onSubmit()" >
-                  <h1>Login</h1>
+                  <h1>Welcome to HealthiCheck</h1>
                   <p class="text-muted">Sign In to your account</p>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -15,6 +16,12 @@
                     </div>
                     <input [formControl]="form.controls['login']"
                            type="text" class="form-control" placeholder="Username" autocomplete="username" required>
+                    <div *ngIf="form.controls['login'].hasError('required') && form.controls['login'].touched" style="display: block;" class="invalid-feedback">
+                      The login is required
+                    </div>
+                    <div *ngIf="form.controls['login'].hasError('email') && form.controls['login'].touched" style="display: block;" class="invalid-feedback">
+                      The email input is invalid
+                    </div>
                   </div>
                   <div class="input-group mb-4">
                     <div class="input-group-prepend">
@@ -22,24 +29,31 @@
                     </div>
                     <input [formControl]="form.controls['password']"
                      type="password" class="form-control" placeholder="Password" autocomplete="current-password" required>
+                    <div *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" style="display: block;" class="invalid-feedback">
+                      The password is required
+                    </div>
+                    <div *ngIf="form.controls['password'].hasError('minlength') && form.controls['password'].touched" style="display: block;" class="invalid-feedback">
+                      The password must be at least 6 characters
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <button (click)="onSubmit()"  type="submit" class="btn btn-primary px-4">Login</button>
-                    </div>
-                    <div class="col-6 text-right">
-                      <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                      <button [disabled]="!form.valid" (click)="onSubmit()" class="btn btn-primary px-4">Login</button>
                     </div>
                   </div>
                 </form>
               </div>
             </div>
             <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
+              <div class="row">
+                <div class="col-md-12 mx-auto">
+                  <img style="width: 100%;" src="assets/img/brand/logo.png" alt="admin@bootstrapmaster.com"/>
+                </div>
+              </div>
               <div class="card-body text-center">
                 <div>
-                  <h2>Sign up</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                  <button routerLink="/register/" type="button" class="btn btn-primary active mt-3">Register Now!</button>
+                  <h2>Check user details</h2>
+                  <button routerLink="/register/" type="button" class="btn btn-primary active mt-3">Check now!!</button>
                 </div>
               </div>
             </div>

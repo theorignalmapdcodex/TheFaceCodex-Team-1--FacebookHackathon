@@ -5,14 +5,18 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import {CollapseModule} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
     FormsModule,
     DashboardRoutingModule,
     BsDropdownModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    CollapseModule.forRoot()
   ],
-  declarations: [ DashboardComponent ]
+  declarations: [ DashboardComponent ],
+  providers: [
+  ]
 })
 export class DashboardModule { }
